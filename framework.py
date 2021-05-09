@@ -1,3 +1,4 @@
+from __future__ import print_function, unicode_literals
 from __future__ import with_statement
 import textwrap
 from contextlib import contextmanager
@@ -5,6 +6,9 @@ try:
     from StringIO import StringIO ## for Python 2
 except ImportError:
     from io import StringIO ## for Python 3
+from PyInquirer import style_from_dict, Token, prompt, Separator
+from pprint import pprint
+from pyfiglet import Figlet
 
 INDENT = ' ' * 4
 
@@ -227,71 +231,183 @@ class PySourceBuilder(SourceBuilder):
             self.writeln(delimiter)
 
 
-
-print("Alphas available :")
-print("> RSI")
-print("> EMA Cross")
-print("> MACD")
-print("> Historical Returns")
-print("> Pairs Trading")
-alpha = input("Select an alpha : ")
-if alpha == "RSI" or alpha == "EMA Cross" or alpha == "MACD" or alpha == "Historical Returns" or alpha == "Pairs Trading":
-  pass
-else:
-  print("\n")
-  print("Seems like you didn't type correctly the name of an alpha in the list above")
-
 print("\n")
-print("Universe available :")
-print("> Large Cap Equities")
-print("> EMA Cross Universe")
-print("> Coarse Universe")
-print("> Coarse-Fine Universe")
-print("> Scheduled Universe")
-print("> Manual Selection")
-universe = input("Select a universe : ")
-if universe == "Large Cap Equities" or universe == "EMA Cross Universe" or universe == "Coarse Universe" or universe == "Coarse-Fine Universe" or universe == "Scheduled Universe" or universe == "Manual Selection":
-  pass
-else:
-  print("\n")
-  print("Seems like you didn't type correctly the name of an universe in the list above")
-
+f = Figlet(font='slant')
+print(f.renderText('Quantconnect'))
 print("\n")
-print("Portfolio's construction available :")
-print("> Equal Weighting")
-print("> Mean-Variance")
-print("> Black Litterman")
-portfolio = input("Select a portfolio construction : ")
-if portfolio == "Equal Weighting" or portfolio == "Mean-Variance" or portfolio == "Black Litterman":
-  pass
-else:
-  print("\n")
-  print("Seems like you didn't type correctly the name of a portfolio construction in the list above")
 
-print("\n")
-print("Type of Executions available :")
-print("> Immediate")
-print("> VWAP")
-print("> Standard deviation")
-execution = input("Select an execution : ")
-if execution == "Immediate" or execution == "VWAP" or execution == "Standard deviation":
-  pass
-else:
-  print("\n")
-  print("Seems like you didn't type correctly the name of the execution in the list above")
+style = style_from_dict({
+    Token.Separator: '#cc5454',
+    Token.QuestionMark: '#673ab7 bold',
+    Token.Selected: '#cc5454',  # default
+    Token.Pointer: '#673ab7 bold',
+    Token.Instruction: '',  # default
+    Token.Answer: '#f44336 bold',
+    Token.Question: '',
+})
 
-print("\n")
-print("Type of Risks management :")
-print("> Maximum Drawdown")
-print("> Sector Exposure")
-risk = input("Select an execution : ")
-if risk == "Maximum Drawdown" or risk == "Sector Exposure":
-  pass
-else:
-  print("Seems like you didn't type correctly the name of the execution in the list above")
+print("Let's build a strategy!")
 
+questions = [
+    {
+        'type': 'list',
+        'message': 'Choose an alpha',
+        'name': 'alpha',
+        'choices': [
+            Separator('\n= Alpha ='),
+            {
+                'name': 'RSI'
+            },
+            {
+                'name': 'EMA Cross'
+            },
+            {
+                'name': 'MACD'
+            },
+            {
+                'name': 'Historical Returns'
+            },
+            {
+                'name': 'Pairs Trading'
+            },
+            {
+                'name': 'None'
+            }
+        ],
+
+        'validate': lambda answer: 'You must choose one of these' \
+            if len(answer) == 0 else True
+
+    },
+    {
+        'type': 'list',
+        'message': 'Choose an universe',
+        'name': 'universe',
+        'choices': [
+            Separator('\n= Universe ='),
+            {
+                'name': 'Large Cap Equities'
+            },
+            {
+                'name': 'EMA Cross Universe'
+            },
+            {
+                'name': 'Coarse Universe'
+            },
+            {
+                'name': 'Coarse-Fine Universe'
+            },
+            {
+                'name': 'Scheduled Universe'
+            },
+            {
+                'name': 'Manual Selection'
+            },
+            {
+                'name': 'None'
+            }
+        ],
+        'validate': lambda answer: 'You must choose at least one of these' \
+            if len(answer) == 0 else True
+    },
+
+    {
+        'type': 'list',
+        'message': 'Choose the construction of your portfolio',
+        'name': 'portfolio',
+        'choices': [
+            Separator('\n= Portfolio ='),
+            {
+                'name': 'Equal Weighting'
+            },
+            {
+                'name': 'Mean-Variance'
+            },
+            {
+                'name': 'Black Litterman'
+            },
+            {
+                'name': 'None'
+            }
+        ],
+        'validate': lambda answer: 'You must choose at least one of these' \
+            if len(answer) == 0 else True
+    },
+    {
+            'type': 'list',
+            'message': 'Choose the type of execution',
+            'name': 'execution',
+            'choices': [
+                Separator('\n= Execution ='),
+                {
+                    'name': 'Immediate'
+                },
+                {
+                    'name': 'VWAP'
+                },
+                {
+                    'name': 'Standard deviation'
+                },
+                {
+                    'name': 'None'
+                }
+            ],
+            'validate': lambda answer: 'You must choose at least one of these' \
+                if len(answer) == 0 else True
+        },
+            {
+                    'type': 'list',
+                    'message': 'Choose the type of risk management',
+                    'name': 'risk',
+                    'choices': [
+                        Separator('\n= Risk ='),
+                        {
+                            'name': 'Maximum Drawdown'
+                        },
+                        {
+                            'name': 'Sector Exposure'
+                        },
+                        {
+                            'name': 'None'
+                        }
+                    ],
+                    'validate': lambda answer: 'You must choose at least one of these' \
+                        if len(answer) == 0 else True
+                },
+            {
+                    'type': 'input',
+                    'message': 'Type the start date in this format YYYY, MM, DD (e.g : 2017, 1, 1)',
+                    'name': 'start',
+                    'validate': lambda answer: 'You must choose at least one of these' \
+                        if len(answer) == 0 else True
+                },
+            {
+                    'type': 'input',
+                    'message': 'Set Strategy cash (e.g : 100000)',
+                    'name': 'cash',
+                    'validate': lambda answer: 'You must choose at least one of these' \
+                        if len(answer) == 0 else True
+                },
+            {
+                    'type': 'confirm',
+                    'message': 'Build the strategy? (make sure there is no strategy.py file in this directory)',
+                    'name': 'build',
+                    'validate': lambda answer: 'You must choose at least one of these' \
+                        if len(answer) == 0 else True
+                }
+]
+
+answers = prompt(questions, style=style)
+
+factors = []
+for n in answers:
+    list = answers[n]
+    factors.append(list)
+
+
+#code generation
 sb = SourceBuilder()
-klasses = ['AdaptableYellowRat']
+klasses = ['DancingBlueOwl']
 for klass in klasses:
      sb.writeln('class {0}(QCAlgorithm):'.format(klass))
      sb.writeln()
@@ -299,61 +415,73 @@ for klass in klasses:
          sb.writeln('def Initialize(self):')
          with sb.indent:
 
-             sb.writeln('self.SetStartDate(2017,1, 1) # Set Start Date')
-             sb.writeln('self.SetCash(100000) # Set Strategy Cash')
+             sb.writeln('self.SetStartDate('+factors[5]+') # Set Start Date')
+             sb.writeln('self.SetCash('+factors[6]+') # Set Strategy Cash')
              sb.writeln('#self.AddEquity("SPY", Resolution.Minute)')
              sb.writeln()
 
               #alpha
-             if alpha == "RSI":
+             if factors[0] == "RSI":
                sb.writeln('self.AddAlpha(RsiAlphaModel(60, Resolution.Minute))')
 
-             if alpha == "EMA Cross":
+             if factors[0] == "EMA Cross":
                sb.writeln('self.AddAlpha(EmaCrossAlphaModel(50, 200, Resolution.Minute))')
 
-             if alpha == "MACD":
+             if factors[0] == "MACD":
                sb.writeln('self.AddAlpha(MacdAlphaModel(12, 26, 9, MovingAverageType.Simple, Resolution.Daily))')
 
-             if alpha == "Historical Returns":
+             if factors[0] == "Historical Returns":
                sb.writeln('self.AddAlpha(HistoricalReturnsAlphaModel(14, Resolution.Daily))')
 
-             if alpha == "Pairs Trading":
+             if factors[0] == "Pairs Trading":
                sb.writeln('self.AddAlpha(PearsonCorrelationPairsTradingAlphaModel(252, Resolution.Daily))')
+
+             if factors[0] == "None":
+               pass
 
              sb.writeln()
 
              #execution
-             if execution == "Immediate":
+             if factors[3] == "Immediate":
                sb.writeln('self.SetExecution(ImmediateExecutionModel())')
 
-             if execution == "VWAP":
+             if factors[3] == "VWAP":
                sb.writeln('self.SetExecution(VolumeWeightedAveragePriceExecutionModel())')
 
-             if execution == "Standard deviation":
+             if factors[3] == "Standard deviation":
                sb.writeln('self.SetExecution(StandardDeviationExecutionModel(60, 2, Resolution.Minute))')
+
+             if factors[3] == "None":
+                 pass
 
              sb.writeln()
 
              #portfolio
 
-             if portfolio == "Equal Weighting":
+             if factors[2] == "Equal Weighting":
                sb.writeln('self.SetPortfolioConstruction(EqualWeightingPortfolioConstructionModel())')
 
-             if portfolio == "Mean-Variance":
+             if factors[2] == "Mean-Variance":
                sb.writeln('self.SetPortfolioConstruction(MeanVarianceOptimizationPortfolioConstructionModel())')
 
-             if portfolio == "Black Litterman":
+             if factors[2] == "Black Litterman":
                sb.writeln('self.SetPortfolioConstruction(BlackLittermanOptimizationPortfolioConstructionModel())')
+
+             if factors[2] == "None":
+                 pass
 
              sb.writeln()
 
              #risk management
 
-             if risk == "Maximum Drawdown":
+             if factors[4] == "Maximum Drawdown":
                sb.writeln('self.SetRiskManagement(MaximumDrawdownPercentPerSecurity(0.01))')
 
-             if risk == "Sector Exposure":
+             if factors[4] == "Sector Exposure":
                sb.writeln('self.SetRiskManagement(MaximumSectorExposureRiskManagementModel())')
+
+             if factors[4] == "None":
+                 pass
 
              sb.writeln()
 
@@ -361,24 +489,24 @@ for klass in klasses:
 
 
              #universe
-             if universe == "Large Cap Equities":
+             if factors[1] == "Large Cap Equities":
                sb.writeln('self.SetUniverseSelection(QC500UniverseSelectionModel())')
 
-             if universe == "EMA Cross Universe":
+             if factors[1] == "EMA Cross Universe":
                sb.writeln('fastPeriod = 10')
                sb.writeln('slowPeriod = 30')
                sb.writeln('count = 10')
                sb.writeln('self.SetUniverseSelection(EmaCrossUniverseSelectionModel(fastPeriod, slowPeriod, count))')
 
-             if universe == "Coarse Universe":
+             if factors[1] == "Coarse Universe":
                sb.writeln('self.SetUniverseSelection(CoarseFundamentalUniverseSelectionModel(self.CoarseSelectionFunction))')
 
-             if universe == "Coarse-Fine Universe":
+             if factors[1] == "Coarse-Fine Universe":
                sb.writeln('self.__numberOfSymbols = 100')
                sb.writeln('self.__numberOfSymbolsFine = 5')
                sb.writeln('self.SetUniverseSelection(FineFundamentalUniverseSelectionModel(self.CoarseSelectionFunction, self.FineSelectionFunction, None, None))')
 
-             if universe == "Scheduled Universe":
+             if factors[1] == "Scheduled Universe":
                sb.writeln('# selection will run on mon/tues/thurs at 00:00/06:00/12:00/18:00')
                sb.writeln('self.SetUniverseSelection(ScheduledUniverseSelectionModel(')
                with sb.indent:
@@ -387,9 +515,12 @@ for klass in klasses:
                           sb.writeln('self.SelectSymbols')
                sb.writeln('))')
 
-             if universe == "Manual Selection":
+             if factors[1] == "Manual Selection":
                sb.writeln('symbols = [ Symbol.Create("SPY", SecurityType.Equity, Market.USA) ]')
                sb.writeln('self.SetUniverseSelection( ManualUniverseSelectionModel(symbols) )')
+
+             if factors[1] == "None":
+                 pass
 
 
              sb.writeln()
@@ -402,8 +533,7 @@ for klass in klasses:
 
 
 source = sb.end()
-print("\n")
-print(source)
 
 with open('strategy.py', 'a') as file:
     print(source, file=file)
+print("Just created the strategy.py file!")

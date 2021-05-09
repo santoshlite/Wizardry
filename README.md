@@ -1,6 +1,6 @@
 # Algorithmic Wizardry
 
-**Still in development...***
+**Still in development...**
 
 A CLI for building algorithmic trading strategy (for QC)
 

@@ -1,5 +1,7 @@
 # Algorithmic Wizardry
 
+**Still in development...***
+
 A CLI for building algorithmic trading strategy (for QC)
 
 <img src="Capture.JPG"/>

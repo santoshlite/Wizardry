@@ -7,7 +7,7 @@ Wizardry is a **CLI** for **building powerful algorithmic trading strategies fas
 ```
 pip install wizardry
 ```
-
+![](https://raw.githubusercontent.com/ssantoshp/Wizardry/main/documentation/install.gif)
 
 ## Usage 🏦
 
@@ -26,4 +26,8 @@ Before going into details for each of these commands, **click on the image below
 So, let's get into these 3 commands
 
 ### wizardry framework
+
+![](https://raw.githubusercontent.com/ssantoshp/Wizardry/main/documentation/frame.gif)
+
+### wizardry library
 

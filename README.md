@@ -1,18 +1,12 @@
 # Algorithmic Wizardry
 
-**Still in development...**
+## What is it?
 
-A CLI for building algorithmic trading strategy (for QC)
+Wizardry is a CLI for building powerful algorithmic trading strategies faster and easier (for Lean/QuantConnect)
 
-<img src="Capture.JPG"/>
+## Installation
 
-## Try it
-
-- install ```framework.py``` in a folder
-- go to the folder directory with the command prompt
-- install the required librairies : 
-                                  - ```pip install pyfiglet```
-                                  - ```pip install PyInquirer```
-- type ```python framework.py```
-- Build your strategy!
+```
+pip install wizardry
+```
 

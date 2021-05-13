@@ -1,4 +1,4 @@
-# Algorithmic Wizardry
+# Algorithmic Wizardry 💫
 
 ## What is it?
 

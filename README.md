@@ -1,3 +1,4 @@
+
 # Wizardry, the Algorithmic Wizard 💫
 
 Wizardry is a **CLI** for **building powerful algorithmic trading strategies faster** and **easier** (for Lean/QuantConnect)

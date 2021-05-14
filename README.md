@@ -1,6 +1,8 @@
 
 # Wizardry, the Algorithmic Wizard 💫
 
+![](https://static.pepy.tech/personalized-badge/wizardry?period=total&units=international_system&left_color=black&right_color=brightgreen&left_text=Users)
+
 Wizardry is an open-source **CLI** for **building powerful algorithmic trading strategies faster** and **easier** (for Lean/QuantConnect)
 
 ## Installation 🧙

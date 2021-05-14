@@ -31,11 +31,11 @@ So, let's get into these 3 commands
 
 It follows the same process than Quantconnect (+few extra features) :
 
-- **Universe Selection :** Select your assets
-- **Alpha Creation :** Generate trading signals
-- **Portfolio Construction :** Determine position size targets
-- **Execution :** Place trades to reach your position sizes
-- **Risk Management :** Manage the market risks
+- 🍈 **Universe Selection :** Select your assets
+- 🍓 **Alpha Creation :** Generate trading signals
+- 🍇 **Portfolio Construction :** Determine position size targets
+- 🍉 **Execution :** Place trades to reach your position sizes
+- 🍌 **Risk Management :** Manage the market risks
 
 ### wizardry library
 

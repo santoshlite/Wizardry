@@ -3,8 +3,6 @@
 
 Wizardry is a **CLI** for **building powerful algorithmic trading strategies faster** and **easier** (for Lean/QuantConnect)
 
-https://github.com/ssantoshp/Wizardry/blob/main/documentation/2021-05-13_20h41_14.mp4?raw=true
-
 ## Installation 🧙
 
 ```

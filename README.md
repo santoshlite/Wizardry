@@ -23,9 +23,9 @@ pip install wizardry
 
 ## Usage 🏦
 
-There is 3 commands in Wizardry CLI:
+There are 3 commands in Wizardry CLI:
 
-- ```wizardry framework``` enables user to define an **alpha**, an **universe**, a **portfolio construction** and a **risk managment model** to build the body of your strategy
+- ```wizardry framework``` enables user to define an **alpha**, a **universe**, a **portfolio construction** and a **risk managment model** to build the body of your strategy
 
 - ```wizardry library``` enables user to **explore** and **"fork"** to their local machine about **100 algo trading strategies** from this [webpage](https://www.quantconnect.com/tutorials/strategy-library/strategy-library)
 

@@ -1,7 +1,7 @@
 
 # Wizardry, the Algorithmic Wizard 💫
 
-Wizardry is an open-source **CLI** for **building powerful algorithmic trading strategies faster** and **easier** (for Lean/QuantConnect)
+Wizardry is an open-source **CLI** built on the top of [lean cli](https://github.com/QuantConnect/lean-cli) for **building powerful algorithmic trading strategies faster** and **easier** (for Lean/QuantConnect)
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/ssantoshp/Wizardry/main/documentation/wiz.png"/>
@@ -25,17 +25,23 @@ pip install wizardry
 
 There are 3 commands in Wizardry CLI:
 
+- ```wizardry create ProjectName``` **create a project** on which you can work on. You should alway start with this command when creating a new algorithm.
+
 - ```wizardry framework``` enables user to define an **alpha**, a **universe**, a **portfolio construction** and a **risk managment model** to build the body of your strategy
 
 - ```wizardry library``` enables user to **explore** and **"fork"** to their local machine about **100 algo trading strategies** from this [webpage](https://www.quantconnect.com/tutorials/strategy-library/strategy-library)
 
-- ```wizardry backtest``` Backtesting is not available for the moment but this command line will guide you on **how to backtest your code to Quantconnect!**
+- ```wizardry backtest``` **backtest** your trading strategy on QuantConnect's cloud
+
+- ```wizardry live``` deploy your algorithm **in live** with QuantConnect
+
+- ```wizardry live``` **optimize your strategy** with QuantConnect
 
 Before going into details for each of these commands, **click on the image below to see a demo/tutorial of Wizardry**
 
 [<img src="https://i.ibb.co/R71vr7k/pic.png" width="200"/>](https://www.youtube.com/watch?v=1ejiNJUeID4)
 
-So, let's get into these 3 commands
+So, let's get into these commands
 
 ### wizardry framework
 
@@ -48,6 +54,10 @@ It follows the same process than Quantconnect (+few extra features) :
 - 🍇 **Portfolio Construction :** Determine position size targets
 - 🍉 **Execution :** Place trades to reach your position sizes
 - 🍌 **Risk Management :** Manage the market risks
+
+<div align="center">
+<img src="https://cdn.quantconnect.com/web/i/docs/algorithm-framework/algorithm-framework.png"/>
+</div>
 
 ### wizardry library
 
@@ -74,9 +84,6 @@ For the first time:
 You're done!🚀
 
 If you want to watch a tutorial about to make that, you can watch my video from [here](https://youtu.be/1ejiNJUeID4?t=189)
-
-## Credit
-Made possible thanks to QuantConnect
 
 ## Contribution 
 

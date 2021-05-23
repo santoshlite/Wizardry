@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "wizardry"
+version = "0.1.2"
+description = "Wizardry is an open-source CLI for building powerful algorithmic trading strategies faster and easier"
+authors = ["ssantoshp <santoshpassoubady@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+wizardry = "wizardry.cli:app"
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+typer = {extras = ["all"], version = "^0.3.2"}
+termcolor = "^1.1.0"
+requests = "2.25.1"
+lean = "^0.1.53"
+PyInquirer = "^1.0.2"
+pyfiglet = "^0.8.0" 
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+PyInquirer = "^1.0.2"
+pyfiglet = "^0.8.0"
+termcolor = "1.1.0"
+requests = "2.25.1"
+lean = "^0.1.53"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

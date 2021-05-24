@@ -50,6 +50,10 @@ So, let's get into these commands
 
 ### wizardry create ProjectName
 
+
+![](https://raw.githubusercontent.com/ssantoshp/Wizardry/main/documentation/create.gif)
+
+
 This command allow you to create a project folder:
 ```
 ├── ProjectName
@@ -75,7 +79,7 @@ Once you created the project, in order to work on it with wizardry, you'll need 
 cd ProjectName
 ```
 
-Note: For every other commands, you'll need to be in your project directory in order to make it work.
+**Note: For every other commands, you'll need to be in your project directory in order to make it work.**
 
 ### wizardry framework
 
@@ -99,21 +103,7 @@ It follows the same process than Quantconnect (+few extra features) :
 
 ### wizardry backtest
 
-Here is how I advise you to backtest your strategy made on Wizardry :
-
-For the first time:
-
-1. run ```pip install lean``` in an empty folder
-
-2. run ```lean login``` in this same directory with the command prompt and give your QuantConnect ID and API token (you can get them [here](https://www.quantconnect.com/settings/))
-
-3. run ```lean create-project "Project Name"``` in the same directory with your command prompt
-
-4. Replace the ```main.py``` file in the "Project Name" folder by your ```main.py```
-
-5. run ```lean cloud push --project "Project Name"```
-
-6. finally, run ```lean cloud backtest "Project Name" --open --push'``` (just repeat this command when modifying the file)
+Run ```wizardry backtest``` in your project directory
 
 You're done!🚀
 
@@ -121,9 +111,11 @@ If you want to watch a tutorial about to make that, you can watch my video from 
 
 ### wizardry optimize
 
+Run ```wizardry optimize``` in your project directory
 
 ### wizardry live
 
+Run ```wizardry live``` in your project directory
 
 
 ## Contribution 

@@ -1,7 +1,7 @@
 
 # Wizardry, the Algorithmic Wizard 💫
 
-Wizardry is an open-source **framework** and **CLI** built on the top of [lean cli](https://github.com/QuantConnect/lean-cli) for **building powerful algorithmic trading strategies faster** and **easier** (for Lean/QuantConnect)
+Wizardry is an open-source **framework** and **CLI** built on the top of [**lean cli**](https://github.com/QuantConnect/lean-cli) for **building powerful algorithmic trading strategies faster** and **easier** (for Lean/QuantConnect)
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/ssantoshp/Wizardry/main/documentation/wiz.png"/>
@@ -24,7 +24,7 @@ pip install wizardry
 
 ## Usage 🏦
 
-There are 3 commands in Wizardry CLI:
+There are 6 commands in Wizardry CLI:
 
 - ```wizardry create ProjectName``` **create a project** on which you can work on. You should alway start with this command when creating a new algorithm.
 
@@ -43,6 +43,35 @@ Before going into details for each of these commands, **click on the image below
 [<img src="https://i.ibb.co/R71vr7k/pic.png" width="200"/>](https://www.youtube.com/watch?v=1ejiNJUeID4)
 
 So, let's get into these commands
+
+### wizardry create ProjectName
+
+This command allow you to create a project folder:
+```
+├── ProjectName
+│   ├── .idea
+│   │   ├── misc.xml
+│   │   ├── modules.xml
+│   │   ├── ProjectName.iml
+│   │   └── workspace.xml
+│   │   
+│   ├── .vscode
+│   │   ├── launch.json
+|   |   └── settings.json
+|   |  
+│   ├── config.json
+│   ├── main.py (where your algo is)
+│   └── research.ipynb
+
+```
+
+Once you created the project, in order to work on it with wizardry, you'll need to go your project directory
+
+```
+cd ProjectName
+```
+
+Note: For every other commands, you'll need to be in your project directory in order to make it work.
 
 ### wizardry framework
 

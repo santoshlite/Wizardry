@@ -38,11 +38,10 @@ There are 6 commands in Wizardry CLI:
 
 - ```wizardry live``` **optimize your strategy** with QuantConnect
 
-Before going into details for each of these commands, **click on the image below to see a demo/tutorial of Wizardry**
 
 <div align="center">
   
-[<img src="https://i.ibb.co/R71vr7k/pic.png" width="200"/>](https://www.youtube.com/watch?v=1ejiNJUeID4)
+<img src="https://raw.githubusercontent.com/ssantoshp/Wizardry/main/documentation/pic.png"/>
   
 </div>
 

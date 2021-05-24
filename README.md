@@ -98,9 +98,11 @@ It follows the same process than Quantconnect (+few extra features) :
 
 Run ```wizardry backtest``` in your project directory
 
-You're done!🚀
-
-If you want to watch a tutorial about to make that, you can watch my video from [here](https://youtu.be/1ejiNJUeID4?t=189)
+What it will do:
+- Push the local changes to the cloud
+- Backtest in the cloud (with QuantConnect's data)
+- Show you the result in your terminal
+- Open a page with the backtesting's results
 
 ### wizardry optimize
 

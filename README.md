@@ -38,6 +38,7 @@ There are 6 commands in Wizardry CLI:
 
 - ```wizardry live``` **optimize your strategy** with QuantConnect
 
+<br>
 
 <div align="center">
   
@@ -45,11 +46,13 @@ There are 6 commands in Wizardry CLI:
   
 </div>
 
-So, let's get into these commands
+<br>
+
+## Descriptions of these commands
+
+<br>
 
 ### wizardry create ProjectName
-
-
 ![](https://raw.githubusercontent.com/ssantoshp/Wizardry/main/documentation/create.gif)
 
 

@@ -38,22 +38,13 @@ There are 6 commands in Wizardry CLI:
 
 - ```wizardry live``` **optimize your strategy** with QuantConnect
 
-<br>
-
-<div align="center">
-  
-<img src="https://raw.githubusercontent.com/ssantoshp/Wizardry/main/documentation/pic.png"/>
-  
-</div>
-
-<br>
 
 ## Descriptions of these commands
 
-<br>
 
 ### wizardry create ProjectName
-![](https://raw.githubusercontent.com/ssantoshp/Wizardry/main/documentation/create.gif)
+
+![](https://raw.githubusercontent.com/ssantoshp/Wizardry/main/documentation/realone.gif)
 
 
 This command allow you to create a project folder:

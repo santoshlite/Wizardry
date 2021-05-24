@@ -117,16 +117,11 @@ Run ```wizardry optimize``` in your project directory
 
 Run ```wizardry live``` in your project directory
 
+## Issues and Feature Requests ##
 
-## Contribution 
+Please submit bugs and feature requests as an issue. Before submitting an issue please read others to ensure it is not a duplicate.
 
-If you have some suggestions or improvements don't hesitate to create an issue or make a pull request. Any help is welcome!
+## Contributors and Pull Requests ##
 
-Just make sure you respect that 
-```
-When contributing to this repository, please first discuss the change you wish to make via issue,
-email, or any other method with the owners of this repository before making a change. 
-
-Please note we have a code of conduct, please follow it in all your interactions with the project.
-```
+Contributions are warmly very welcomed but we ask you to read the existing code to see how it is formatted, commented and ensure contributions match the existing style. All code submissions must include accompanying tests. Please see the [contributor guide lines](contributor.md).
 

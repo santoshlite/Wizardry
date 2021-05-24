@@ -108,9 +108,19 @@ What it will do:
 
 Run ```wizardry optimize``` in your project directory
 
+It will push the modifications to the cloud and offer different options in order to optimize your strategy.
+
+Based on QuantConnect's ```lean cloud optimize``` command, check what it can do [here](https://www.quantconnect.com/docs/v2/lean-cli/tutorials/optimization/cloud-optimizations)
+
+
 ### wizardry live
 
 Run ```wizardry live``` in your project directory
+
+It will push the modifications to the cloud and deploy your strategy live.
+
+Based on QuantConnect's ```lean cloud live``` command, check what it can do [here](https://www.quantconnect.com/docs/v2/lean-cli/tutorials/live-trading/cloud-live-trading)
+
 
 ## Issues and Feature Requests ##
 

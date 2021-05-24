@@ -40,7 +40,9 @@ There are 6 commands in Wizardry CLI:
 
 Before going into details for each of these commands, **click on the image below to see a demo/tutorial of Wizardry**
 
+<div align="center">
 [<img src="https://i.ibb.co/R71vr7k/pic.png" width="200"/>](https://www.youtube.com/watch?v=1ejiNJUeID4)
+</div>
 
 So, let's get into these commands
 

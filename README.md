@@ -7,7 +7,7 @@ Wizardry is an open-source **CLI** built on the top of [**lean cli**](https://gi
 <img src="https://raw.githubusercontent.com/ssantoshp/Wizardry/main/documentation/wiz.png"/>
 
 ![](https://img.shields.io/badge/build-passing-orange)
-![](https://static.pepy.tech/personalized-badge/wizardry?period=total&units=international_system&left_color=black&right_color=brightgreen&left_text=Users)
+![](https://img.shields.io/badge/Users-2k-brightgreen)
 ![](https://img.shields.io/badge/license-MIT-blue)
 ![](https://img.shields.io/badge/swag%20level-A++-yellow)
 ![](https://img.shields.io/badge/language-python🐍-blue)
